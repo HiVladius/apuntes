@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Style/depuracion_app.css'
+
 
 const App = () => {
   const [left, setLeft] = useState(0)

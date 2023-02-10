@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Depuracion from './depuracion_app_js'
 
+
 const Display = ({counter}) => <div>{counter}</div>
 
 const Button = ({ handleClick, text }) => (
@@ -31,7 +32,9 @@ const App = () => {
         text='minus'
       />
 
-      <Depuracion />           
+      <Depuracion />  
+
+             
     </div>
   )
 }
