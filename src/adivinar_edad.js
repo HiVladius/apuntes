@@ -1,18 +1,18 @@
 import React from 'react'
 
 //Se hace la equivalencia de esta funcion con la que no se encuentra comentada para hacer uso de la funsion fecha
- 
+
 /*const Hello = (props) => {
     const bornYear = () => {
       const yearNow = new Date().getFullYear()
       return yearNow - props.age
     } */
 
-const Hello = ({name, age}) => { //Este estra forma de destructurar esta es una asignacion directa, en vez de pasarlos por los props
-   
+const Hello = ({ name, age }) => { //Este estra forma de destructurar esta es una asignacion directa, en vez de pasarlos por los props
+
     /* const name = props.name
     const age = props.age */
-    
+
     //const {name, age} = props //Esto es equivalente al codigo anterior destructurandolo
 
     const bornYear = () => new Date().getFullYear() - age
