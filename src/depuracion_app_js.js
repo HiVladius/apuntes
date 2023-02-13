@@ -1,10 +1,29 @@
 import React, { useState } from 'react';
 
+const History = (props) => { //Esto se llama renderizado condicional
+  if (props.allClicks.length === 0) {
+    return(
+      <div>
+        the app is used by pressing the button
+      </div>
+    )
+  }
+  return(
+    <div>
+      button press History: {props.allClicks.join(' ')}
+    </div>
+  )
+}
+
+const Button = ({onClick, text}) => (
+  <button onClick={onClick}>{text}</button>
+)
+
 
 const App = () => {
   const [left, setLeft] = useState(0)
   const [right, setRight] = useState(0)
-  const [allClicks, setAll] = useState([])
+  const [allClicks, setAll] = useState([]) // esta parte ayuda a que recuerde los clicks ocurridos
 
   const handleLeftClick = () => {
     setAll(allClicks.concat('L'))
@@ -20,10 +39,10 @@ const App = () => {
   return (
     <div>
       {left}
-      <button onClick={handleLeftClick}>left</button>
-      <button onClick={handleRightClick}>right</button>
+      <Button onClick={handleLeftClick} text='left' />
+      <Button onClick={handleRightClick} text='right' />
       {right}
-      <p>{allClicks.join(' ')}</p>
+      <History allClicks={allClicks} />
     </div>
   )
 }

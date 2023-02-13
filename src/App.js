@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import Depuracion from './depuracion_app_js'
+import Eventos from './manejo-de-eventos-revisado'
 
 
-const Display = ({counter}) => <div>{counter}</div>
+const Display = ({ counter }) => <div>{counter}</div>
 
 const Button = ({ handleClick, text }) => (
-  
+
   <button onClick={handleClick}>{text}</button>
 )
 
 const App = () => {
-  const [ counter, setCounter ] = useState(0)
+  const [counter, setCounter] = useState(0)
 
   const increaseByOne = () => setCounter(counter + 1)
   const decreaseByOne = () => setCounter(counter - 1)
@@ -18,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <Display counter={counter}/>
+      <Display counter={counter} />
       <Button
         handleClick={increaseByOne}
         text='plus'
@@ -26,15 +27,19 @@ const App = () => {
       <Button
         handleClick={setToZero}
         text='zero'
-      />     
+      />
       <Button
         handleClick={decreaseByOne}
         text='minus'
       />
+      <div>
+        <Depuracion />
+      </div>
 
-      <Depuracion />  
+      <div>
+        <Eventos />
+      </div>
 
-             
     </div>
   )
 }
